@@ -1,5 +1,4 @@
-# Sales-and-Product-Analysis-Power-BI-Dashboard
-
+# Power BI Online Retail Dashboard
 # 🛍️ Online Retail Dashboard – Power BI Project
 
 I’m excited to share my latest analytics project: an **Interactive Online Retail Dashboard** built in **Power BI**, comparing retail performance across **2022–2023** and **2023–2024**.

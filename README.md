@@ -74,17 +74,17 @@ Each page is linked through dynamic **navigation buttons**, allowing users to mo
 ## 📷 Dashboard Preview
 
 ### 🧭 **Summary Page**
-![Summary Page](Summary%20Page.png)
+![Summary Page](Summary-Page.png)
 
 ---
 
 ### 📈 **Sales Analytics Page**
-![Sales Analytics Page](Sales%20Analytics%20Page.png)
+![Sales Analytics Page](Sales-Analytics-Page.png)
 
 ---
 
 ### 📦 **Product Analysis Page**
-![Product Analysis Page](Product%20Analysis%20Page.png)
+![Product Analysis Page](Product-Analysis-Page.png)
 
 ---
 

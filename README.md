@@ -1,4 +1,5 @@
-🛍️ Power BI Online Retail Dashboard – Stakeholder Case Study
+🛍️ Online Sales Retail Dashboard
+
 Executive Summary
 
 This project presents a comprehensive analysis of two years of online retail transactional data, relabelled as 2022–2023 and 2023–2024 to reflect current market scenarios. The analysis was conducted using Power BI to evaluate revenue growth, product performance, customer behaviour, and regional sales contribution.

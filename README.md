@@ -1,115 +1,113 @@
-# Power BI Online Retail Dashboard
+🛍️ Power BI Online Retail Dashboard – Stakeholder Case Study
+Executive Summary
 
-# 🛍️ Online Retail Dashboard – Power BI Project
+This project presents a comprehensive analysis of two years of online retail transactional data, relabelled as 2022–2023 and 2023–2024 to reflect current market scenarios. The analysis was conducted using Power BI to evaluate revenue growth, product performance, customer behaviour, and regional sales contribution.
 
-I’m excited to share my latest analytics project: an **Interactive Online Retail Dashboard** built in **Power BI**, comparing retail performance across **2022–2023** and **2023–2024**.
+The objective was not simply to build a dashboard, but to transform raw transactional records into strategic business insights that can inform revenue planning, product strategy, and geographic expansion decisions.
 
-This project is based on the **Online Retail II dataset** from the **UCI Machine Learning Repository**, which originally contained data from **2009–2011**.  
-To make the analysis more relevant to today’s retail landscape, I’ve **renamed the years** to **2022–2023** and **2023–2024** — keeping the integrity of the data intact while aligning it with **current market timelines** and decision-making contexts.
+Across the two financial years, the business generated £29.04 million in total sales, supported by 16 million units sold and over 5,900 unique customers. The analysis revealed a 104% year-on-year revenue increase, indicating strong commercial momentum and market expansion.
 
----
+Business Context
 
-## 📈 What the Data Reveals
+The retail company aims to understand what drove its rapid growth between the two years. Specifically, leadership wants clarity on whether growth is driven by higher customer acquisition, increased basket value, improved product mix, or regional expansion. Additionally, there is interest in identifying potential concentration risks — either in product dependency or geographic reliance.
 
-### 💰 **1. Sales Momentum**
-- Total sales reached **£29.04M**, supported by **16M units sold** across two years.  
-- The business achieved a **104% year-on-year sales growth**, reflecting strong recovery and expansion.  
-- The final quarter of 2023–2024 alone delivered nearly **double the revenue** of the previous year, driven by seasonal demand peaks.
+The dataset used for this project originates from the Online Retail II dataset (UCI Machine Learning Repository), originally covering 2009–2011. To align findings with present-day retail contexts, the years were relabelled as 2022–2024 while preserving the dataset’s structural integrity.
 
----
+Data Preparation and Modelling
 
-### 🧩 **2. Product Insights**
-- The **top five products** contributed to over **40% of total sales**, showing heavy revenue concentration.  
-- The **Average Order Value (AOV)** increased to **£541.42**, driven by multi-item purchases and bundled sales.  
-- Certain SKUs demonstrated exponential growth, while some long-established items saw a sales slowdown — hinting at evolving consumer preferences.
+The dataset consists of invoice-level transaction records, including product descriptions, quantities, unit prices, customer IDs, invoice dates, and country information.
 
----
+Data cleaning involved removing duplicate transactions, handling missing customer identifiers, validating quantity and pricing consistency, and structuring the invoice date into a proper time hierarchy (Year, Quarter, Month).
 
-### 🌍 **3. Regional Breakdown**
-- **Switzerland, Spain, and Sweden** emerged as leading markets, contributing over **80% of total sales volume**.  
-- Newer markets like **Singapore** and **Thailand** show potential for expansion.  
-- Seasonal fluctuations were consistent across regions, mirroring global retail shopping trends.
+A Star Schema data model was designed to ensure scalable and accurate reporting. The central Fact_Transactions table was connected to dimension tables for Date, Product, Country, and Customer. This structure enabled dynamic year-on-year comparisons and multidimensional analysis across time, geography, and product categories.
 
----
+Key business metrics were calculated using DAX measures, including Total Sales, Sales Growth (£ and %), Average Order Value (AOV), Average Selling Price (ASP), and Units Sold. These measures formed the foundation for variance analysis and performance tracking.
 
-### 👥 **4. Customer Behaviour**
-- Over **5,900 unique customers** were analysed.  
-- Returning customers generated higher-value orders, whereas new customers showed more frequent but smaller transactions — a healthy sign of acquisition growth.  
+Revenue Performance Analysis
 
----
+The company recorded £9.5 million in sales during 2022–2023, which increased significantly to £19.5 million in 2023–2024, representing a 104% year-on-year growth rate. This doubling of revenue within one year suggests accelerated market demand and improved commercial performance.
 
-## 📊 Dashboard Pages
+Quarterly analysis revealed particularly strong performance in Q4, where revenue in 2023–2024 nearly doubled compared to the previous year. This indicates strong seasonal demand patterns, likely influenced by holiday-driven retail behaviour.
 
-| Page | Focus | Highlights |
-|------|--------|-------------|
-| **Summary Page** | Executive snapshot | KPIs, quarterly trends, top countries, product mix |
-| **Sales Analytics Page** | Regional & temporal analysis | Year-on-year growth, monthly sales trends, contribution by country |
-| **Product Analysis Page** | Product-level performance | Sales growth contribution, AOV trends, and country-wise distribution |
+The substantial £220K+ growth contribution highlights that expansion was not incremental but structurally significant.
 
-Each page is linked through dynamic **navigation buttons**, allowing users to move seamlessly across reports.
+Product Performance and Revenue Concentration
 
----
+The analysis identified over 5,100 distinct products, with revenue heavily concentrated among the top-performing SKUs. Specifically, the top five products contributed approximately 40% of total revenue, indicating a high degree of sales concentration.
 
-## 🧮 Technical Summary
+This concentration presents both an opportunity and a risk. On one hand, high-performing products demonstrate strong brand alignment and demand consistency. On the other hand, over-reliance on a small subset of SKUs exposes the business to product lifecycle volatility and competitive pressures.
 
-- **Dataset Source:** [Online Retail II – UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Online+Retail+II)  
-- **Data Cleaning:**  
-  - Used **Power Query** to merge yearly tables and handle missing `CustomerID` values.  
-  - Removed duplicates and formatted `InvoiceDate` to create a proper Date hierarchy.  
-- **Data Modelling:**  
-  - Designed a **Star Schema** connecting the Fact_Transactions table with Dimension tables (Date, Country, Product, Customer).  
-- **Core DAX Measures:**  
-  - `Total Sales = SUMX(Fact_Transactions, Fact_Transactions[Quantity] * Fact_Transactions[Price])`  
-  - `Sales Growth % = DIVIDE([Sales 2023-24] - [Sales 2022-23], [Sales 2022-23])`  
-  - `AOV = DIVIDE([Total Sales], DISTINCTCOUNT(Fact_Transactions[Invoice]))`
-- **Analysis Techniques:**  
-  - Year-on-Year (YoY) comparison  
-  - Growth contribution (Waterfall & variance charts)  
-  - KPI variance indicators  
-  - Dynamic page navigation using bookmarks and buttons  
-  - Searchable slicers for country, customer, and product filtering  
+Product-level growth analysis showed that some SKUs experienced exponential year-on-year growth, while certain long-established products declined significantly. This pattern suggests evolving customer preferences and potential product lifecycle transitions.
 
----
+Pricing and Customer Basket Behaviour
 
-## 📷 Dashboard Preview
+The analysis revealed an Average Selling Price (ASP) of £1.84 and an Average Order Value (AOV) of £541.42. While the individual unit price remains relatively low, the high AOV suggests that customers purchase multiple items per transaction.
 
-### 🧭 **Summary Page**
+This indicates that growth is primarily driven by increased basket size rather than premium pricing. The rising AOV between the two years suggests successful upselling, bundling strategies, or increased repeat purchase behaviour.
+
+Customer analysis across 5,900+ unique customers indicates that repeat customers contribute disproportionately to revenue, demonstrating the importance of retention and loyalty initiatives.
+
+Regional Sales Distribution
+
+Geographic analysis identified Switzerland, Spain, and Sweden as the leading revenue-generating regions, contributing more than 80% of total sales volume. Switzerland in particular represents a significant portion of total units sold, indicating strong market penetration.
+
+Emerging markets such as Singapore and Thailand, while smaller in contribution, show measurable growth potential. However, the heavy reliance on a limited number of markets introduces geographic concentration risk.
+
+Strategically, this suggests the need for regional diversification while maintaining strong engagement in dominant markets.
+
+Seasonal and Temporal Trends
+
+Monthly and quarterly analysis revealed clear seasonal patterns. Revenue consistently peaks during Q4, aligning with typical global retail demand cycles.
+
+The most significant year-on-year increases occurred during the final quarter, indicating that promotional strategies or seasonal purchasing behaviour strongly influence annual performance.
+
+This insight supports targeted marketing investment in pre-Q4 periods to maximize conversion during peak seasons.
+
+Dashboard Structure
+
+The Power BI dashboard is structured into three interactive pages:
+
+1. Summary Page
+
 ![Summary Page](Summary-Page.png)
 
----
 
-### 📈 **Sales Analytics Page**
+Provides an executive-level overview of KPIs, quarterly trends, top-performing countries, and product mix visualization.
+
+2. Sales Analytics Page
+
 ![Sales Analytics Page](Sales-Analytics-Page.png)
 
----
 
-### 📦 **Product Analysis Page**
+Focuses on year-on-year comparisons, monthly trends, and regional contribution analysis, including variance breakdowns.
+
+3 Product Analysis Page
+
 ![Product Analysis Page](Product-Analysis-Page.png)
 
----
 
-## 💡 Key Findings
-| Metric | 2022–2023 | 2023–2024 | Growth |
-|---------|------------|------------|---------|
-| Total Sales (£) | £9.5M | £19.5M | **+104%** |
-| Units Sold | 8M | 8M | — |
-| Average Order Value | £270 | £541 | **+100%** |
-| Distinct Products | 2,500 | 5,100 | **+104%** |
+Explores SKU-level growth contribution, product performance trends, and country-level distribution.
 
----
+Each page includes dynamic slicers and navigation buttons, allowing stakeholders to filter by year, country, product, and customer for deeper insight exploration.
 
-## 🎯 Insights in Focus
-The dashboard highlights how **revenue growth** is being driven by high-value repeat customers and strategic product categories, while certain regions and SKUs still offer untapped potential.  
-This analysis reaffirms the importance of **data-driven storytelling** in identifying where a business grows — and where it should grow next.
+Strategic Recommendations
 
----
+Based on the analysis, several strategic actions are recommended:
 
-## 👤 Author
-**Neeraj Raj Srinivasa Raju**  
-🎓 MSc Management & Business Analytics – Nottingham Trent University  
-📍 Nottingham, UK  
-🔗 [LinkedIn](https://www.linkedin.com/in/NeerajRaj796)  
-🔗 [GitHub Portfolio](https://github.com/NeerajRaj796)
+Diversify revenue streams to reduce dependency on top-performing SKUs.
 
-⭐ *If you found this project insightful, feel free to star the repository and explore my other work like the [Netflix Dashboard](https://github.com/NeerajRaj796/Netflix_Dashboard.git).*
+Strengthen investment in high-growth emerging markets while reducing geographic concentration risk.
 
+Optimize Q4 promotional strategies to capitalize on seasonal peaks.
+
+Expand bundling and loyalty programs to sustain rising AOV.
+
+Monitor declining SKUs and adjust product lifecycle management accordingly.
+
+Conclusion
+
+This analysis demonstrates how structured data modelling and business intelligence tools can transform raw retail transactions into strategic insights.
+
+The dashboard quantifies a 104% year-on-year revenue increase, identifies product concentration risks, highlights geographic dependency, and reveals customer basket expansion trends.
+
+By integrating revenue, product, customer, and regional insights into a single interactive platform, this project provides a data-driven foundation for informed decision-making and long-term retail growth strategy.

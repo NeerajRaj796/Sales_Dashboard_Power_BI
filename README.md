@@ -7,6 +7,29 @@ The objective was not simply to build a dashboard, but to transform raw transact
 
 Across the two financial years, the business generated £29.04 million in total sales, supported by 16 million units sold and over 5,900 unique customers. The analysis revealed a 104% year-on-year revenue increase, indicating strong commercial momentum and market expansion.
 
+Dashboard Structure
+
+The Power BI dashboard is structured into three interactive pages:
+
+1. Summary Page
+
+![Summary Page](Summary-Page.png)
+
+
+Provides an executive-level overview of KPIs, quarterly trends, top-performing countries, and product mix visualization.
+
+2. Sales Analytics Page
+
+![Sales Analytics Page](Sales-Analytics-Page.png)
+
+
+Focuses on year-on-year comparisons, monthly trends, and regional contribution analysis, including variance breakdowns.
+
+3 Product Analysis Page
+
+![Product Analysis Page](Product-Analysis-Page.png)
+
+
 Business Context
 
 The retail company aims to understand what drove its rapid growth between the two years. Specifically, leadership wants clarity on whether growth is driven by higher customer acquisition, increased basket value, improved product mix, or regional expansion. Additionally, there is interest in identifying potential concentration risks — either in product dependency or geographic reliance.
@@ -62,29 +85,6 @@ Monthly and quarterly analysis revealed clear seasonal patterns. Revenue consist
 The most significant year-on-year increases occurred during the final quarter, indicating that promotional strategies or seasonal purchasing behaviour strongly influence annual performance.
 
 This insight supports targeted marketing investment in pre-Q4 periods to maximize conversion during peak seasons.
-
-Dashboard Structure
-
-The Power BI dashboard is structured into three interactive pages:
-
-1. Summary Page
-
-![Summary Page](Summary-Page.png)
-
-
-Provides an executive-level overview of KPIs, quarterly trends, top-performing countries, and product mix visualization.
-
-2. Sales Analytics Page
-
-![Sales Analytics Page](Sales-Analytics-Page.png)
-
-
-Focuses on year-on-year comparisons, monthly trends, and regional contribution analysis, including variance breakdowns.
-
-3 Product Analysis Page
-
-![Product Analysis Page](Product-Analysis-Page.png)
-
 
 Explores SKU-level growth contribution, product performance trends, and country-level distribution.
 

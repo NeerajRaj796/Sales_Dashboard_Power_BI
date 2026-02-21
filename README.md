@@ -25,7 +25,7 @@ Provides an executive-level overview of KPIs, quarterly trends, top-performing c
 
 Focuses on year-on-year comparisons, monthly trends, and regional contribution analysis, including variance breakdowns.
 
-3 Product Analysis Page
+3. Product Analysis Page
 
 ![Product Analysis Page](Product-Analysis-Page.png)
 
